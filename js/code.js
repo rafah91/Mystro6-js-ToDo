@@ -40,4 +40,29 @@ todoLi.appendChild(todoAction)
 TodoResult.appendChild(todoLi)
 }
 
+function todoToggole(e){
+const item=e.target
+
+if (item.classList[1]==`fa-check`){
+    console.log(`completed`)
+    const taskli = item.parentElement.parentElement.parentElement
+    taskli.childNodes[0].classList.toggle(`completed`)
+
+}
+else if (item.classList[1]==`fa-trash-can`){
+    const taskli = item.parentElement.parentElement.parentElement.classList.add(`deleted`)
+}
+
+
+
+
+}
+
+
+
+
+
+
+
 TodoBtn.addEventListener(`click`,addTodo)
+TodoResult.addEventListener(`click` ,todoToggole)
